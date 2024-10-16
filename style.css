@@ -40,6 +40,9 @@ nav li a{
     color: white;
 }
 
+nav li a:hover{
+    text-decoration: underline;
+}
 
 .home{
     min-height: 100vh;
@@ -60,6 +63,17 @@ nav li a{
     width: 100vw;
     height: 100vh;
     z-index: -1;
+    animation: openImage .7s ease;
+}
+
+@keyframes openImage{
+    0%{
+        height: 5vh;
+    }
+
+    100%{
+        height: 100vh;
+    }
 }
 
 .home h1{
@@ -87,4 +101,13 @@ nav li a{
     text-align: center;
     align-content: center;
     border-radius: 100%;
+}
+
+.socialbtn a:hover{
+    background-color: white;
+    color: black;
+}
+
+#changing_text{
+    transition: all .5s ease;
 }
