@@ -1,20 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@400&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
 
-body{
+body {
     height: 100vh;
     position: relative;
-    width: 100vw;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
-header{
+header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     color: white;
     padding: 2rem 13rem;
@@ -23,30 +25,50 @@ header{
     z-index: 10;
 }
 
-header h3{
+header h3 {
     font-weight: bolder;
     font-size: 1.7rem;
 }
 
-nav{
+nav {
     width: 35rem;
     list-style: none;
     display: flex;
     justify-content: space-evenly;
 }
 
-nav li a{
+nav a {
     text-decoration: none;
     color: white;
+    position: relative;
 }
 
-nav li a:hover{
+.active {
     text-decoration: underline;
+    text-underline-offset: 6px;
 }
 
-.home{
+nav a::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    background-color: white;
+    height: 1.5px;
+    transition: all .5s ease;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+section {
     min-height: 100vh;
-    width: 100vw;
+    width: 100%;
+}
+
+.home {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,43 +78,44 @@ nav li a:hover{
     gap: 20px;
 }
 
-.bg-image{
+.bg-image {
     position: absolute;
-    background:url(/images/bg.jpg) center;
+    background: url(/images/bg.jpg) center;
     filter: brightness(0.3);
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     z-index: -1;
     animation: openImage .7s ease;
 }
 
-@keyframes openImage{
-    0%{
+@keyframes openImage {
+    0% {
         height: 5vh;
     }
 
-    100%{
+    100% {
         height: 100vh;
     }
 }
 
-.home h1{
+.home h1 {
     font-size: 5rem;
 }
-.home h2{
+
+.home h2 {
     font-size: 60px;
     font-family: Montserrat, serif;
     font-weight: 200;
 }
 
-.socialbtn{
+.socialbtn {
     margin-top: 30px;
     width: 20rem;
     display: flex;
     justify-content: space-around;
 }
 
-.socialbtn a{
+.socialbtn a {
     color: white;
     text-decoration: none;
     height: 40px;
@@ -103,11 +126,87 @@ nav li a:hover{
     border-radius: 100%;
 }
 
-.socialbtn a:hover{
+.socialbtn a:hover {
     background-color: white;
     color: black;
 }
 
-#changing_text{
+#changing_text {
     transition: all .5s ease;
+}
+
+.about {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about_container {
+    display: flex;
+    justify-content: center;
+    height: 35rem;
+    gap: 20px;
+    width: 70rem;
+}
+
+.about_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90%;
+}
+
+.headline h1 {
+    font-size: 2.7rem;
+}
+
+.headline h4 {
+    font-family: Montserrat, serif;
+    margin-top: 10px;
+}
+
+.about_content p {
+    color: #504646;
+    font-family: 'Poppins', sans-serif;
+}
+
+.skills {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skill_bar {
+    width: 100%;
+    border-radius: 5px;
+    background-color: rgb(246, 246, 246);
+    height: 1.5rem;
+    box-shadow: inset 5px 5px 20px rgb(184, 184, 184);
+}
+
+.skill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: var(--width);
+    border-radius: 5px;
+    padding: 0 1rem;
+    background-color: black;
+    color: white;
+}
+
+.about_btn button {
+    width: 8rem;
+    height: 2.5rem;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 7px;
+}
+
+.about_btn button:first-child {
+    color: white;
+    background-color: black;
 }
