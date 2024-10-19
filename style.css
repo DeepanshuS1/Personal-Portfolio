@@ -210,3 +210,7 @@ section {
     color: white;
     background-color: black;
 }
+.about_btn button:first-child a{
+    color: white;
+    text-decoration: none;
+}
