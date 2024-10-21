@@ -1,6 +1,6 @@
 let multiText = document.getElementById("changing_text");
 
-let texts = ["Daksh Bist", "Game Developer", "Designer"]
+let texts = ["Ayush Yadav", "business Owner", "Fitness Lover"]
 let i = 1;
 
 setInterval(() => {

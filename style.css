@@ -19,7 +19,7 @@ header {
     align-items: center;
     justify-content: space-between;
     color: white;
-    padding: 2rem 13rem;
+    padding: 1.5rem 13rem;
     position: absolute;
     width: 100vw;
     z-index: 10;
@@ -63,7 +63,7 @@ nav a:hover::before {
     width: 100%;
 }
 
-section {
+section{
     min-height: 100vh;
     width: 100%;
 }
@@ -80,7 +80,8 @@ section {
 
 .bg-image {
     position: absolute;
-    background: url(/images/bg.jpg) center;
+    background: url(/images/bgAyush.jpeg) center;
+    background-size: contain;
     filter: brightness(0.3);
     width: 100%;
     height: 100vh;
@@ -157,6 +158,10 @@ section {
     height: 90%;
 }
 
+.about_content p a{
+    text-decoration: none;
+}
+
 .headline h1 {
     font-size: 2.7rem;
 }
@@ -213,4 +218,14 @@ section {
 .about_btn button:first-child a{
     color: white;
     text-decoration: none;
+}
+
+.services{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.services h1{
+    font-size: 3rem;
 }
