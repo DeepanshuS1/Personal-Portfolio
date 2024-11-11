@@ -36,3 +36,7 @@ window.onscroll = () => {
         header.classList.toggle('header', window.scrollY > homeSec -10);
     });
 }
+
+function sendme(){
+
+}

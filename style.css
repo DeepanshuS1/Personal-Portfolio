@@ -253,6 +253,7 @@ section{
 .contact{
     display: flex;
     align-items: center;
+    padding-top: 85px;
     justify-content: space-around;
     flex-direction: column;
 }
@@ -264,7 +265,7 @@ section{
 
 .contact_detail{
     display: flex;
-    height: 8rem;
+    height: 7.5rem;
     justify-content: space-between;
     width: 40rem;
 }
@@ -291,4 +292,55 @@ section{
 .address i:hover{
     color: rgb(233, 233, 233);
     background-color: black;
+}
+
+.contactform{
+    min-width: 50vw;
+}
+
+.contactform form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.details input,
+textarea{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color: #e3e3e3;
+}
+.details input{
+    width: 48%;
+}
+
+textarea{
+    resize: none;
+    width: 100%;
+}
+
+.btn{
+    padding: 5px 10px;
+    border-radius: 12px;
+    background-color: black;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: white;
+    color: black;
+    scale: 1.02;
 }
