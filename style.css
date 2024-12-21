@@ -466,7 +466,7 @@ textarea {
         top: 0;
         right: 0;
         height: 80vh;
-        width: 20%;
+        width: 40%;
         background-color: rgba(0, 0, 0, 0.705);
         flex-direction: column;
         padding: 10px;
@@ -558,6 +558,7 @@ textarea {
     }
 
     .contactform {
+        padding: 0 10px;
         min-width: 85vw;
     }
 
@@ -598,6 +599,10 @@ textarea {
     .address{
         font-size: 85%;
     }
+
+    nav a{
+        font-size: 96%;
+    }
 }
 
 @media (max-width: 400px) {
@@ -614,7 +619,7 @@ textarea {
     }
 
     .about_content{
-        height: 45rem;
+        height: 40rem;
     }
 
     .contact_detail{
