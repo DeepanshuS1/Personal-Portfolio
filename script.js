@@ -40,3 +40,11 @@ window.onscroll = () => {
 function sendme(){
 
 }
+
+document.querySelector('.menu').addEventListener('click', () => {
+    document.querySelector('header nav').classList.toggle('nav-active');
+});
+
+document.querySelector('.close').addEventListener('click', () => {
+    document.querySelector('header nav').classList.remove('nav-active');
+});

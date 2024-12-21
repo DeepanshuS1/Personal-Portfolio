@@ -18,19 +18,23 @@ body {
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     color: white;
-    padding: 1.5rem 13rem;
+    padding: 1.5rem 1rem;
     position: absolute;
     width: 100vw;
     z-index: 10;
     transition: all .5s ease-in;
 }
 
-
 header h3 {
     font-weight: bolder;
     font-size: 1.7rem;
+}
+
+.menu,
+.close {
+    display: none;
 }
 
 nav {
@@ -46,14 +50,14 @@ nav a {
     position: relative;
 }
 
-.header{
+.header {
     background-color: white;
     color: black;
     position: fixed;
     box-shadow: 5px 5px 15px #b8b6b6;
 }
 
-.header nav a{
+.header nav a {
     color: black;
 }
 
@@ -72,16 +76,16 @@ header nav a::before {
     transition: all .5s ease-in-out;
 }
 
-.header nav a::before{
+.header nav a::before {
     background-color: black;
 }
 
 header nav a.active::before,
-nav a:hover::before{
+nav a:hover::before {
     width: 100%;
 }
 
-section{
+section {
     min-height: 100vh;
     width: 100%;
     transition: all .5s ease;
@@ -165,19 +169,23 @@ section{
 .about_container {
     display: flex;
     justify-content: center;
-    height: 35rem;
-    gap: 20px;
+    align-items: center;
+    gap: 30px;
     width: 70rem;
+}
+
+.about_img img{
+    width: 25rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .about_content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 90%;
 }
 
-.about_content p a{
+.about_content p a {
     text-decoration: none;
 }
 
@@ -230,16 +238,21 @@ section{
     border-radius: 7px;
 }
 
+.about_btn button a {
+    text-decoration: none;
+    color: black;
+}
+
 .about_btn button:first-child {
-    color: white;
     background-color: black;
 }
-.about_btn button:first-child a{
+
+.about_btn button:first-child a {
     color: white;
     text-decoration: none;
 }
 
-.blog{
+.blog {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -248,7 +261,7 @@ section{
     padding-top: 80px;
 }
 
-.blog h1{
+.blog h1 {
     font-size: 3rem;
     font-weight: 900;
     color: #14b9ff;
@@ -307,7 +320,7 @@ section{
     color: #007BFF;
 }
 
-.contact{
+.contact {
     display: flex;
     align-items: center;
     padding-top: 85px;
@@ -315,26 +328,26 @@ section{
     flex-direction: column;
 }
 
-.contact h1{
+.contact h1 {
     font-weight: 900;
     font-size: 2.5rem;
 }
 
-.contact_detail{
+.contact_detail {
     display: flex;
     height: 7.5rem;
     justify-content: space-between;
     width: 40rem;
 }
 
-.address{
+.address {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }
 
-.address i{
+.address i {
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 100%;
@@ -346,16 +359,16 @@ section{
     background-color: rgb(233, 233, 233);
 }
 
-.address i:hover{
+.address i:hover {
     color: rgb(233, 233, 233);
     background-color: black;
 }
 
-.contactform{
-    min-width: 50vw;
+.contactform {
+    min-width: 45rem;
 }
 
-.contactform form{
+.contactform form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -363,7 +376,7 @@ section{
     width: 100%;
 }
 
-.details{
+.details {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -371,23 +384,24 @@ section{
 }
 
 .details input,
-textarea{
+textarea {
     border: none;
     padding: 10px;
     border-radius: 10px;
     font-size: 1.2rem;
     background-color: #e3e3e3;
 }
-.details input{
+
+.details input {
     width: 48%;
 }
 
-textarea{
+textarea {
     resize: none;
     width: 100%;
 }
 
-.btn{
+.btn {
     padding: 5px 10px;
     border-radius: 12px;
     background-color: black;
@@ -396,8 +410,218 @@ textarea{
     cursor: pointer;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: white;
     color: black;
     scale: 1.02;
+}
+
+@media (max-width: 1200px){
+    header {
+        padding: 1rem;
+        justify-content: space-between;
+    }
+
+    .about_content{
+        font-size: 90%;
+        width: 50%;
+        height: 32rem;
+    }
+
+    .about_img img{
+        width: 20rem;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+        justify-content: space-between;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    nav {
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 80vh;
+        width: 20%;
+        background-color: rgba(0, 0, 0, 0.705);
+        flex-direction: column;
+        padding: 10px;
+        transform: translate(50%,-100%);
+        transition: all .5s ease;
+    }
+    
+    .header nav{
+        background-color: rgba(255, 255, 255, 0.755);
+    }
+    
+    .nav-active {
+        transform: translate(0,0);
+    }
+
+    nav a {
+        font-size: 1.5rem;
+    }
+
+    .close {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        color: white;
+        font-size: 2rem;
+    }
+
+    .header {
+        padding: 1rem;
+    }
+
+    .home h1 {
+        font-size: 3rem;
+    }
+
+    .home h2 {
+        font-size: 40px;
+    }
+
+    .socialbtn {
+        width: 15rem;
+    }
+
+    .about_container {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        padding: 4rem 0;
+    }
+
+    .about_img img {
+        width: 20rem;
+    }
+
+    .about_content {
+        width: 80%;
+    }
+
+    .about_btn button {
+        width: 7rem;
+        height: 2rem;
+    }
+
+    .blog h1 {
+        font-size: 2.5rem;
+    }
+
+    .blogs_container {
+        padding: 1rem;
+    }
+
+    .blogCard {
+        width: 370px;
+    }
+
+    .contact h1 {
+        font-size: 2rem;
+    }
+
+    .contact_detail {
+        width: 90%;
+        gap: 20px;
+        font-size: 85%;
+    }
+
+    .address i {
+        font-size: 1.5rem;
+    }
+
+    .contactform {
+        min-width: 85vw;
+    }
+
+    .details input,
+    textarea {
+        padding: 8px;
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 5px 8px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 500px) {
+    
+    .home h2 {
+        font-size: 2.2rem;
+    }
+    
+    .blogCard{
+        width: 80%;
+    }
+
+    .skills{
+        font-size: 85%;
+    }
+
+    .about_content{
+        height: 40rem;
+    }
+
+    .contact_detail{
+        gap: 10px;
+    }
+
+    .address{
+        font-size: 85%;
+    }
+}
+
+@media (max-width: 400px) {
+    .home h2 {
+        font-size: 1.8rem;
+    }
+
+    .blogCard{
+        width: 90%;
+    }
+
+    .skills{
+        font-size: 80%;
+    }
+
+    .about_content{
+        height: 45rem;
+    }
+
+    .contact_detail{
+        gap: 5px;
+    }
+
+    .address{
+        font-size: 80%;
+    }
 }
