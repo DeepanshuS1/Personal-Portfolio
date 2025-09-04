@@ -103,7 +103,7 @@ section {
 
 .bg-image {
     position: absolute;
-    background: url(/images/bgAyush.jpeg) center;
+    background: url(/images/bgAyush.jpg) center;
     background-size: contain;
     filter: brightness(0.3);
     width: 100%;
