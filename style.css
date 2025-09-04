@@ -167,22 +167,39 @@ section {
 }
 
 .about_container {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    align-items: center;
+    gap: 40px;
+    width: min(1100px, 100%);
+    padding: 80px 16px;
+}
+
+.about_img {
+    background: rgb(255,255,255);
+    border-radius: 18px;
+    padding: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    width: 70rem;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+    width: 100%;
+    max-width: 540px;
+    min-width: 220px;
 }
-
 .about_img img{
-    width: 25rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: none;
+    background: transparent;
 }
 
 .about_content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 18px;
 }
 
 .about_content p a {
@@ -196,6 +213,7 @@ section {
 .headline h4 {
     font-family: Montserrat, serif;
     margin-top: 10px;
+    color: #666;
 }
 
 .about_content p {
@@ -238,6 +256,11 @@ section {
     border-radius: 7px;
 }
 
+.about_btn {
+    display: flex;
+    gap: 12px;
+}
+
 .about_btn button a {
     text-decoration: none;
     color: black;
@@ -250,6 +273,10 @@ section {
 .about_btn button:first-child a {
     color: white;
     text-decoration: none;
+}
+
+.about_btn button:hover {
+    transform: translateY(-1px);
 }
 
 .blog {
@@ -416,21 +443,188 @@ textarea {
     scale: 1.02;
 }
 
+/* ========== Portfolio ========== */
+.portfolio {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 90px 16px 60px;
+}
+
+.portfolio .container {
+    width: min(1100px, 100%);
+}
+
+.portfolio h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+}
+
+.portfolio .subtitle {
+    text-align: center;
+    color: #666;
+    margin-top: 6px;
+}
+
+.portfolio-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 24px 0 18px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    border: 1.5px solid #000;
+    background: #fff;
+    color: #000;
+    border-radius: 24px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.portfolio-item {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.portfolio-item:focus-visible {
+    box-shadow: 0 0 0 3px #14b9ff55;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.15);
+}
+
+.portfolio-item .thumb {
+    position: relative;
+    aspect-ratio: 16/9;
+    background: #f2f2f2;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0,0,0,.75);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: .8rem;
+}
+
+.play-icon,
+.zoom-icon {
+    position: absolute;
+    color: #fff;
+    font-size: 2rem;
+    right: 10px;
+    bottom: 10px;
+    background: rgba(0,0,0,.6);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+}
+
+.portfolio-item h4 {
+    padding: 10px 12px 14px;
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    display: none;
+    z-index: 1000;
+}
+
+.lightbox.active { display: block; }
+
+.lightbox__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.7);
+}
+
+.lightbox__content {
+    position: relative;
+    max-width: min(1000px, 92vw);
+    margin: 6vh auto;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.lightbox__close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(255,255,255,.15);
+    border: none;
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.lightbox__img {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+.lightbox__video-wrap { aspect-ratio: 16/9; width: 100%; display: none; }
+.lightbox__iframe { width: 100%; height: 100%; display: block; }
+
+/* Responsive grid */
+@media (max-width: 1024px) {
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+    .portfolio-grid { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 1200px){
     header {
         padding: 1rem;
         justify-content: space-between;
     }
 
-    .about_content{
-        font-size: 90%;
-        width: 50%;
-        height: 32rem;
-    }
-
-    .about_img img{
-        width: 20rem;
-    }
+    .about_container { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .about_content{ font-size: 95%; }
 }
 
 ::-webkit-scrollbar {
@@ -511,20 +705,10 @@ textarea {
         width: 15rem;
     }
 
-    .about_container {
-        flex-direction: column;
-        gap: 20px;
-        width: 100%;
-        padding: 4rem 0;
-    }
-
-    .about_img img {
-        width: 20rem;
-    }
-
-    .about_content {
-        width: 80%;
-    }
+    .about_container { grid-template-columns: 1fr; padding: 3rem 1rem; }
+    .about_content { width: min(700px, 92vw); }
+    .about_img { display: flex; justify-content: center; align-items: center; padding: 10px; max-width: 95vw; }
+    .about_img img { max-width: 320px; }
 
     .about_btn button {
         width: 7rem;
@@ -588,9 +772,7 @@ textarea {
         font-size: 85%;
     }
 
-    .about_content{
-        height: 40rem;
-    }
+    .about_content{ height: auto; }
 
     .contact_detail{
         gap: 10px;
@@ -618,9 +800,7 @@ textarea {
         font-size: 80%;
     }
 
-    .about_content{
-        height: 40rem;
-    }
+    .about_content{ height: auto; }
 
     .contact_detail{
         gap: 5px;

@@ -15,6 +15,7 @@
         <nav>
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
             <a href="#blog">Blogs</a>
             <a href="#contact">Contact Us!</a>
             <i class='bx bx-x close'></i>
@@ -82,6 +83,80 @@
                 <div class="about_btn">
                     <button><a href="/images/Student Athlete Resume.pdf">Download C.V</a></button>
                     <button><a href="#contact">Contact Me</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h1>Portfolio</h1>
+            <p class="subtitle">Video edits from YouTube and graphic design posts.</p>
+
+            <div class="portfolio-controls" role="tablist" aria-label="Portfolio filters">
+                <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+                <button class="filter-btn" data-filter="video" role="tab" aria-selected="false">Videos</button>
+                <button class="filter-btn" data-filter="design" role="tab" aria-selected="false">Designs</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Videos: replace YOUTUBE_ID with your video IDs -->
+                <article class="portfolio-item video" data-type="video" data-video-id="dQw4w9WgXcQ" tabindex="0" aria-label="Play video: Sample Edit 1">
+                    <div class="thumb">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Sample Edit 1 thumbnail">
+                        <span class="badge">Video</span>
+                        <i class='bx bx-play play-icon' aria-hidden="true"></i>
+                    </div>
+                    <h4>Sample Edit 1</h4>
+                </article>
+
+                <article class="portfolio-item video" data-type="video" data-video-id="ScMzIvxBSi4" tabindex="0" aria-label="Play video: Sample Edit 2">
+                    <div class="thumb">
+                        <img src="https://img.youtube.com/vi/ScMzIvxBSi4/hqdefault.jpg" alt="Sample Edit 2 thumbnail">
+                        <span class="badge">Video</span>
+                        <i class='bx bx-play play-icon' aria-hidden="true"></i>
+                    </div>
+                    <h4>Sample Edit 2</h4>
+                </article>
+
+                <!-- Designs: replace images with your design posts -->
+                <article class="portfolio-item design" data-type="image" data-img-src="images/bicep.jpg" tabindex="0" aria-label="Open design: Gym Poster 1">
+                    <div class="thumb">
+                        <img src="images/bicep.jpg" alt="Gym Poster 1">
+                        <span class="badge">Design</span>
+                        <i class='bx bx-zoom-in zoom-icon' aria-hidden="true"></i>
+                    </div>
+                    <h4>Gym Poster 1</h4>
+                </article>
+
+                <article class="portfolio-item design" data-type="image" data-img-src="images/Hammer Curl.jpg" tabindex="0" aria-label="Open design: Gym Poster 2">
+                    <div class="thumb">
+                        <img src="images/Hammer Curl.jpg" alt="Gym Poster 2">
+                        <span class="badge">Design</span>
+                        <i class='bx bx-zoom-in zoom-icon' aria-hidden="true"></i>
+                    </div>
+                    <h4>Gym Poster 2</h4>
+                </article>
+
+                <article class="portfolio-item design" data-type="image" data-img-src="images/bicep2.jpg" tabindex="0" aria-label="Open design: Gym Poster 3">
+                    <div class="thumb">
+                        <img src="images/bicep2.jpg" alt="Gym Poster 3">
+                        <span class="badge">Design</span>
+                        <i class='bx bx-zoom-in zoom-icon' aria-hidden="true"></i>
+                    </div>
+                    <h4>Gym Poster 3</h4>
+                </article>
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox" aria-hidden="true">
+            <div class="lightbox__backdrop" data-close></div>
+            <div class="lightbox__content" role="dialog" aria-modal="true" aria-label="Preview">
+                <button class="lightbox__close" aria-label="Close preview" data-close>&times;</button>
+                <img class="lightbox__img" alt="Portfolio preview">
+                <div class="lightbox__video-wrap">
+                    <iframe class="lightbox__iframe" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
