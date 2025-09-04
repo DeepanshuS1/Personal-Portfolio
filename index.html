@@ -8,6 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="portfolio-styles.css">
+    <link rel="stylesheet" href="lightbox-styles.css">
 </head>
 
 <body>
@@ -92,6 +93,27 @@
             <h1>Portfolio</h1>
             <p class="subtitle">Video edits from YouTube and graphic design posts.</p>
 
+            <!-- Featured Video Section -->
+            <div class="featured-video">
+                <div class="video-container">
+                    <video id="mainVideo" playsinline controlsList="nodownload" poster="images/reel1.png">
+                        <source src="images/main.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-controls">
+                        <button class="play-pause" aria-label="Play video">
+                            <i class='bx bx-play'></i>
+                        </button>
+                        <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                        <button class="mute" aria-label="Mute video">
+                            <i class='bx bx-volume-full'></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <div class="portfolio-controls" role="tablist" aria-label="Portfolio filters">
                 <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
                 <button class="filter-btn" data-filter="video" role="tab" aria-selected="false">Videos</button>
@@ -133,6 +155,40 @@
                     <div class="info">
                         <h3 class="title">Video Edit 3</h3>
                         <p class="description">Watch the full video on YouTube</p>
+                    </div>
+                </a>
+
+                <!-- Instagram Reels -->
+                <a class="portfolio-item video" data-type="video" href="https://www.instagram.com/reel/DMVFourTulk/" target="_blank" rel="noopener" tabindex="0" aria-label="Watch on Instagram: Reel Design 1">
+                    <div class="thumb">
+                        <img src="images/reel1.png" alt="Reel Design 1">
+                        <span class="badge">Instagram Reel</span>
+                        <i class='bx bxl-instagram play-icon' aria-hidden="true"></i>
+                    </div>
+                    <div class="info">
+                        <h3 class="title">Reel Design 1</h3>
+                    </div>
+                </a>
+
+                <a class="portfolio-item video" data-type="video" href="https://www.instagram.com/reel/DMXcwoozi7u/" target="_blank" rel="noopener" tabindex="0" aria-label="Watch on Instagram: Reel Design 2">
+                    <div class="thumb">
+                        <img src="images/reel2.png" alt="Reel Design 2">
+                        <span class="badge">Instagram Reel</span>
+                        <i class='bx bxl-instagram play-icon' aria-hidden="true"></i>
+                    </div>
+                    <div class="info">
+                        <h3 class="title">Reel Design 2</h3>
+                    </div>
+                </a>
+
+                <a class="portfolio-item video" data-type="video" href="https://www.instagram.com/reel/DMbav0xzeEX/" target="_blank" rel="noopener" tabindex="0" aria-label="Watch on Instagram: Reel Design 3">
+                    <div class="thumb">
+                        <img src="images/reel3.png" alt="Reel Design 3">
+                        <span class="badge">Instagram Reel</span>
+                        <i class='bx bxl-instagram play-icon' aria-hidden="true"></i>
+                    </div>
+                    <div class="info">
+                        <h3 class="title">Reel Design 3</h3>
                     </div>
                 </a>
 
@@ -203,11 +259,23 @@
         <div class="lightbox" id="lightbox" aria-hidden="true">
             <div class="lightbox__backdrop" data-close></div>
             <div class="lightbox__content" role="dialog" aria-modal="true" aria-label="Preview">
-                <button class="lightbox__close" aria-label="Close preview" data-close>&times;</button>
+                <button class="lightbox__close" aria-label="Close preview" data-close>
+                    <i class='bx bx-x'></i>
+                </button>
+                <button class="lightbox__nav lightbox__nav--prev" aria-label="Previous image">
+                    <i class='bx bx-chevron-left'></i>
+                </button>
+                <button class="lightbox__nav lightbox__nav--next" aria-label="Next image">
+                    <i class='bx bx-chevron-right'></i>
+                </button>
+                <div class="lightbox__counter">
+                    <span class="current">1</span> / <span class="total">1</span>
+                </div>
                 <img class="lightbox__img" alt="Portfolio preview">
                 <div class="lightbox__video-wrap">
-                    <iframe class="lightbox__iframe" title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe class="lightbox__iframe" title="Video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -263,6 +331,8 @@
         </div>
     </section>
     <script src="script.js"></script>
+    <script src="lightbox.js"></script>
+    <script src="video-controls.js"></script>
 </body>
 
 </html>
